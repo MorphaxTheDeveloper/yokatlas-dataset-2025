@@ -1,104 +1,70 @@
-# yokatlas-dataset-2025
-yök atlas detaylı üniversite, bölüm, puan vb. datası..
+# 🎓 Türkiye Üniversite Veri Setleri
 
-# 📄 CSV Veri Seti İçeriği
+Bu proje, Türkiye’deki üniversiteler ve programlarına ait **iki farklı veri setini** içerir:
 
-Bu veri seti, Türkiye’deki üniversitelerin **2015–2024** yılları arasındaki **kontenjan, yerleşme, puan, sıralama ve tercih istatistiklerini** kapsamaktadır.  
-Her satır, **tek bir programın** (ör. "Bilgisayar Mühendisliği – İstanbul Teknik Üniversitesi") yıllara göre istatistiklerini içerir.
-
----
-
-## 📂 Veri Kategorileri
-
-### 1️⃣ Kimlik ve Tanım Bilgileri
-| Sütun Adı  | Açıklama |
-|------------|----------|
-| `id`       | Kayıt numarası |
-| `isim`     | Program adı |
-| `universite` | Üniversite adı |
-| `sure`     | Program süresi (yıl) |
-| `tur`      | Program türü (örgün, ikinci öğretim vb.) |
-| `kosullar` | Özel koşullar |
-| `siraid`   | Tercih kodu |
-| `fakulte`  | Fakülte adı |
-| `aciklama` | Program açıklaması |
-| `il`       | Şehir |
-| `unitur`   | Üniversite türü (devlet, vakıf vb.) |
-| `onlisans` | Ön lisans / lisans bilgisi |
+1. **Program Bazlı İstatistikler (2015–2024)**
+2. **Üniversite Genel Bilgileri ve Akademik Personel/Öğrenci Sayıları**
 
 ---
 
-### 2️⃣ Yıllık Kontenjan ve Yerleşme Bilgileri (2015–2024)
-| Örnek Sütun Adı | Açıklama |
-|-----------------|----------|
-| `kontenjan2024` | 2024 yılı toplam kontenjan |
-| `yerlesme2024`  | 2024 yılı toplam yerleşen öğrenci sayısı |
-| `birinci2024`   | 2024 yılı birincilerin sayısı |
-| `birinciyerlesme2024` | 2024 yılı birincilerden yerleşen öğrenci sayısı |
+## 📂 1. Program Bazlı İstatistikler (2015–2024)
+
+Bu CSV, her satırda tek bir programın (ör. *Bilgisayar Mühendisliği – İstanbul Teknik Üniversitesi*) yıllara göre kontenjan, yerleşme, puan, sıralama ve tercih istatistiklerini içerir.
+
+### 📑 Örnek Bilgi Türleri
+- Program kimlik ve tanım bilgileri
+- Yıllık kontenjan ve yerleşme sayıları
+- Taban puan ve sıralama verileri
+- Tercih istatistikleri
+- Özel kontenjan bilgileri (depremzede, kadın, şehit vb.)
+- Cinsiyet ve mezuniyet durumu dağılımı
+- Ek kontenjan istatistikleri
+
+> **Ana sütun grupları**  
+> `id`, `isim`, `universite`, `sure`, `tur`, `kosullar`, `siraid`, `fakulte`, `aciklama`, `il`, `unitur`, `onlisans`,  
+> `kontenjanYYYY`, `yerlesmeYYYY`, `puanYYYY`, `siraYYYY`, `maxpuanYYYY`,  
+> `tercihtoplamYYYY`, `kizYYYY`, `erkekYYYY`, `liseliYYYY`, `mezunYYYY`,  
+> `depremzedekontenjanYYYY`, `kadinkontenjanYYYY`, `sehitkontenjanYYYY`,  
+> `ekkontenjanYYYY`, `eksehitkontenjanYYYY`, `ekkadinkontenjanYYYY`, `ekdepremzedekontenjanYYYY`  
+> *(YYYY → yıl: 2015–2024)*
 
 ---
 
-### 3️⃣ Puan ve Sıralama Bilgileri (2015–2024)
-| Örnek Sütun Adı | Açıklama |
-|-----------------|----------|
-| `puan2024`      | 2024 yılı taban puanı |
-| `maxpuan2024`   | 2024 yılı yerleşen en yüksek puan |
-| `sira2024`      | 2024 yılı taban puana karşılık gelen başarı sırası |
-| `birincipuan2024` | 2024 yılı birincilerin puanı |
-| `birincimaxpuan2024` | 2024 yılı birincilerden en yüksek puana sahip olanın puanı |
+## 📂 2. Üniversite Genel Bilgileri
+
+Bu CSV, üniversitelerin temel bilgileri, iletişim bilgileri, akademik personel sayıları ve öğrenci istatistiklerini içerir.
+
+### 📑 Örnek Bilgi Türleri
+- Üniversite kimlik bilgileri
+- İletişim ve konum bilgileri
+- Akademik personel dağılımı
+- Eğitim seviyelerine göre öğrenci sayıları
+
+> **Ana sütunlar**  
+> `isim`, `slug`, `kurulus`, `tur`, `il`, `bolge`, `website`, `eposta`, `telefon`, `fax`, `adres`, `rektor`,  
+> `profesor`, `docent`, `doktor`, `ogretim`, `arastirma`,  
+> `onlisanserkek`, `onlisanskadin`, `onlisanstoplam`,  
+> `lisanserkek`, `lisanskadin`, `lisanstoplam`,  
+> `yukseklisanserkek`, `yukseklisanskadin`, `yukseklisanstoplam`,  
+> `doktoraerkek`, `doktorakadin`, `doktoratoplam`,  
+> `toplamerkek`, `toplamkadin`, `toplam`
 
 ---
 
-### 4️⃣ Tercih İstatistikleri
-| Örnek Sütun Adı | Açıklama |
-|-----------------|----------|
-| `tercihtoplam2023`   | 2023 yılı toplam tercih sayısı |
-| `tercihbirinci2023`  | 2023 yılı birinci sıradan yapılan tercih sayısı |
-| `tercihilkuc2023`    | 2023 yılı ilk 3 tercihten gelen başvuru sayısı |
-| `tercihilkdokuz2023` | 2023 yılı ilk 9 tercihten gelen başvuru sayısı |
+## 📊 Kullanım Örnekleri
 
----
+### Python ile Okuma
+```python
+import pandas as pd
 
-### 5️⃣ Özel Kontenjanlar (2023–2024)
-| Sütun Adı | Açıklama |
-|-----------|----------|
-| `depremzedekontenjan2024` | Depremzedeler için ayrılan kontenjan |
-| `kadinkontenjan2024`      | Kadınlar için özel kontenjan |
-| `sehitkontenjan2024`      | Şehit yakınları için kontenjan |
-| `depremzedeyerlesen2023`  | Depremzedelerden yerleşen öğrenci sayısı |
-| `kadinyerlesen2023`       | Kadınlardan yerleşen öğrenci sayısı |
-| `sehityerlesen2023`       | Şehit yakınlarından yerleşen öğrenci sayısı |
+# Program bazlı istatistikler
+df_program = pd.read_csv("program_verileri.csv")
 
----
+# Üniversite genel bilgileri
+df_uni = pd.read_csv("universite_bilgileri.csv")
 
-### 6️⃣ Cinsiyet ve Eğitim Durumu Dağılımı
-| Sütun Adı | Açıklama |
-|-----------|----------|
-| `kiz2023`     | 2023 yılı yerleşen kadın öğrenci sayısı |
-| `erkek2023`   | 2023 yılı yerleşen erkek öğrenci sayısı |
-| `liseli2023`  | 2023 yılı yerleşen lise son sınıf öğrencisi sayısı |
-| `mezun2023`   | 2023 yılı yerleşen lise mezunu sayısı |
-| `universiteli2023` | 2023 yılı üniversite öğrencisi sayısı |
-| `unimezunu2023`    | 2023 yılı üniversite mezunu sayısı |
+# 2024 yılı en yüksek taban puana sahip ilk 5 program
+print(df_program.sort_values("puan2024", ascending=False).head(5))
 
----
-
-### 7️⃣ Ek Kontenjan Bilgileri (2018–2023)
-| Sütun Adı | Açıklama |
-|-----------|----------|
-| `ekkontenjan2023`         | Ek yerleştirme kontenjanı |
-| `eksehitkontenjan2023`    | Ek şehit kontenjanı |
-| `ekkadinkontenjan2023`    | Ek kadın kontenjanı |
-| `ekdepremzedekontenjan2023` | Ek depremzede kontenjanı |
-
----
-
-## 📌 Yıllık Kapsam
-Veri seti **2015** yılından başlar ve **2024** yılına kadar olan tüm yıllara ait bilgileri içerir.  
-Bu sayede:
-- 📈 **Puan ve sıralama trendleri**
-- 🎯 **Kontenjan değişimleri**
-- 👥 **Öğrenci profili analizi**
-- 📊 **Cinsiyet ve mezuniyet dağılımı**  
-gibi analizler yapılabilir.
-
+# En çok lisans öğrencisine sahip 10 üniversite
+print(df_uni.sort_values("lisanstoplam", ascending=False).head(10))
