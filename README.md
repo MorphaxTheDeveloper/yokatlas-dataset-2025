@@ -1,4 +1,4 @@
-# 🎓 Türkiye Üniversite Veri Setleri
+# 🎓 Yök atlas dataset
 
 Bu proje, Türkiye’deki üniversiteler ve programlarına ait **iki farklı veri setini** içerir:
 
