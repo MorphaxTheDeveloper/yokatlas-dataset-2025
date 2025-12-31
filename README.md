@@ -48,11 +48,3 @@ Bu CSV, üniversitelerin temel bilgileri, iletişim bilgileri, akademik personel
 > `yukseklisanserkek`, `yukseklisanskadin`, `yukseklisanstoplam`,  
 > `doktoraerkek`, `doktorakadin`, `doktoratoplam`,  
 > `toplamerkek`, `toplamkadin`, `toplam`
-# Üniversite genel bilgileri
-df_uni = pd.read_csv("universite_bilgileri.csv")
-
-# 2024 yılı en yüksek taban puana sahip ilk 5 program
-print(df_program.sort_values("puan2024", ascending=False).head(5))
-
-# En çok lisans öğrencisine sahip 10 üniversite
-print(df_uni.sort_values("lisanstoplam", ascending=False).head(10))
