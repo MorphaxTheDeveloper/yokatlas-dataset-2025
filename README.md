@@ -1,4 +1,4 @@
-# 🎓 Yök atlas dataset
+# Yök atlas dataset
 
 Bu proje, Türkiye’deki üniversiteler ve programlarına ait **iki farklı veri setini** içerir:
 
@@ -7,11 +7,11 @@ Bu proje, Türkiye’deki üniversiteler ve programlarına ait **iki farklı ver
 
 ---
 
-## 📂 1. Program Bazlı İstatistikler (2015–2024)
+## 1. Program Bazlı İstatistikler (2015–2024)
 
 Bu CSV, her satırda tek bir programın (ör. *Bilgisayar Mühendisliği – İstanbul Teknik Üniversitesi*) yıllara göre kontenjan, yerleşme, puan, sıralama ve tercih istatistiklerini içerir.
 
-### 📑 Örnek Bilgi Türleri
+###  Örnek Bilgi Türleri
 - Program kimlik ve tanım bilgileri
 - Yıllık kontenjan ve yerleşme sayıları
 - Taban puan ve sıralama verileri
@@ -30,11 +30,11 @@ Bu CSV, her satırda tek bir programın (ör. *Bilgisayar Mühendisliği – İs
 
 ---
 
-## 📂 2. Üniversite Genel Bilgileri
+## 2. Üniversite Genel Bilgileri
 
 Bu CSV, üniversitelerin temel bilgileri, iletişim bilgileri, akademik personel sayıları ve öğrenci istatistiklerini içerir.
 
-### 📑 Örnek Bilgi Türleri
+### Örnek Bilgi Türleri
 - Üniversite kimlik bilgileri
 - İletişim ve konum bilgileri
 - Akademik personel dağılımı
@@ -48,18 +48,6 @@ Bu CSV, üniversitelerin temel bilgileri, iletişim bilgileri, akademik personel
 > `yukseklisanserkek`, `yukseklisanskadin`, `yukseklisanstoplam`,  
 > `doktoraerkek`, `doktorakadin`, `doktoratoplam`,  
 > `toplamerkek`, `toplamkadin`, `toplam`
-
----
-
-## 📊 Kullanım Örnekleri
-
-### Python ile Okuma
-```python
-import pandas as pd
-
-# Program bazlı istatistikler
-df_program = pd.read_csv("program_verileri.csv")
-
 # Üniversite genel bilgileri
 df_uni = pd.read_csv("universite_bilgileri.csv")
 
